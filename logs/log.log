@@ -1,0 +1,9 @@
+2017-02-10 09:44:30.087 [main] ERROR com.ycit.Log - log error level
+2017-02-10 09:44:30.089 [main] DEBUG com.ycit.log.Log4j2 - exit app
+2017-02-10 09:45:05.941 [main] ERROR com.ycit.Log - log error level
+2017-02-10 09:45:05.945 [main] DEBUG com.ycit.log.Log4j2 - exit app
+2017-02-11 19:09:41.491 [main] ERROR com.ycit.Log - log error level
+2017-02-11 19:09:41.759 [main] DEBUG com.ycit.log.Log4j2 - exit app
+2017-02-11 19:55:16.851 [main] ERROR com.ycit.Log - log error level
+2017-02-11 19:55:16.856 [main] DEBUG com.ycit.log.Slf4j - exit app
+2017-02-11 20:05:13.578 [main] ERROR com.ycit.Log - log error level
