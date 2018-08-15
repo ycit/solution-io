@@ -80,5 +80,24 @@ public class FileTest {
         }
     }
 
+    @Test
+    public void FileInputStreamTest() throws Exception {
+        String sourcePath = "E:\\study\\spring\\SourceFilteringListener.png";
+        String destinationPath = "E:\\study\\11.png";
+//        String sourcePath = "D:\\test.txt";
+//        String destinationPath = "D:\\111.txt";
+        try (FileInputStream in = new FileInputStream(sourcePath);
+             FileOutputStream out = new FileOutputStream(destinationPath)) { // 这个时候 流中已经包含了这张图片
+            int binary = 0;
+            while ((binary = in.read()) != -1) {
+                out.write(binary);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            System.out.println("流已关闭");
+        }
+    }
+
 }
 
