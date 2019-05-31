@@ -4,9 +4,7 @@ import com.ycit.bean.Student;
 import org.junit.Test;
 
 import java.time.LocalDate;
-import java.util.HashMap;
-import java.util.LinkedHashMap;
-import java.util.Map;
+import java.util.*;
 
 /**
  * hashmap test
@@ -39,11 +37,17 @@ public class HashMapTest {
     @Test
     public void sizeTest() {
         Map<String, String> map = new HashMap<>();
-        map.put("2", "111");
-        map.put("1", "111");
-        map.put("5", "111");
-        map.put("3", "111");
-        map.put("4", "111");
+        map.put("244", "111");
+        map.put("你好", "111");
+        map.put("544", "111");
+        map.put("aa", "111");
+        map.put("444", "111");
+
+        Set<Map.Entry<String, String>> entrySet = map.entrySet();
+        for (Map.Entry<String, String> entry:entrySet) {
+            System.out.println(entry.getKey());
+//            System.out.println(entry.getValue());
+        }
         System.out.println(map);
     }
 
@@ -63,9 +67,13 @@ public class HashMapTest {
     public void collisionTest() {
         Student student = new Student("小明", LocalDate.of(2018, 4, 5));
         Student student2 = new Student("小明", LocalDate.of(2018, 4, 7));
+        Student student3 = new Student("小明", LocalDate.of(2018, 4, 7));
+        Student student4 = new Student("小明", LocalDate.of(2018, 4, 7));
         HashMap<Student, String> map = new HashMap<>();
-        map.put(student, "2");
+        map.put(student, "1");
         map.put(student2, "1");
+        map.put(student3, "1");
+        map.put(student4, "1");
     }
 
 }

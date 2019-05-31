@@ -69,7 +69,16 @@ public class Student {
     @Override
     public boolean equals(Object o) {
         System.out.println("equals invoke,  equals obj: " + super.equals(o));
-        return super.equals(o);
+        if (o == null) {
+            return false;
+        }
+        if (o instanceof Student) {
+            Student student = (Student) o;
+            if (student.getName().equals(this.getName())) {
+                return true;
+            }
+        }
+        return false;
     }
 
     @Override
