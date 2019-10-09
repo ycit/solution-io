@@ -15,12 +15,15 @@ public class HashMapTest {
 
     @Test
     public void commonTest() {
-        int size = tableSizeFor(6);
+        HashMap map = new HashMap();
+        int size = tableSizeFor(4);
+        int size2 = tableSizeFor(-1);
         System.out.println(size);
+        System.out.println(size2);
         for (int i = 0;i < 4; ++i) {
             System.out.println(i);
         }
-        int[]array = new int[4];
+        Object[]array = new Object[4];
         System.out.println(array.length);
     }
 
