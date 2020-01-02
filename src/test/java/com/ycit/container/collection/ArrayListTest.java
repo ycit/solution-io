@@ -1,5 +1,6 @@
 package com.ycit.container.collection;
 
+import com.ycit.bean.Dog;
 import com.ycit.bean.Person;
 import com.ycit.bean.Student;
 import com.ycit.lambda.custom.Foo;
@@ -85,6 +86,19 @@ public class ArrayListTest {
 
     public String add(String str, Function<String, String> function) {
         return function.apply(str);
+    }
+
+    @Test
+    public void test() {
+        Dog dog = new Dog();
+        Dog dog1 = new Dog();
+        List<Dog> dogs = new ArrayList<>();
+        dogs.add(dog);
+        dogs.add(dog1);
+        dog.setName("xx");
+        dog1.setName("mm");
+        System.out.println(dogs);
+        dogs.stream().map(Dog::getName).toString();
     }
 
 }

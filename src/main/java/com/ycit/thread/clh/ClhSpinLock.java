@@ -8,6 +8,14 @@ import java.util.concurrent.atomic.AtomicReference;
 /**
  * 简易 clh 锁队列 实现的自旋锁
  *
+ * AQS
+ * To enqueue into a CLH lock, you atomically splice it in as new
+ * tail. To dequeue, you just set the head field.
+ * <pre>
+ *      +------+  prev +-----+       +-----+
+ * head |      | <---- |     | <---- |     |  tail
+ *      +------+       +-----+       +-----+
+ *
  * @author chenxiaolei
  * @date 2019/10/21
  */
