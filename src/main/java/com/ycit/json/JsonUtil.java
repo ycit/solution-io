@@ -4,6 +4,7 @@ import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.fastjson.serializer.PascalNameFilter;
 import com.alibaba.fastjson.serializer.SerializerFeature;
+import com.ycit.bean.Dog;
 
 /**
  * @author chenxiaolei
@@ -31,6 +32,16 @@ public class JsonUtil {
     public static<T> T toFirstLowercaseJava(String json, Class<T> clazz) {
         JSONObject jsonObject = JSON.parseObject(json);
         return JSONObject.toJavaObject(jsonObject, clazz);
+    }
+
+    public static void main(String[]args) {
+        Dog dog = new Dog();
+        dog.setName("jack");
+        dog.setAge("1");
+        String json = toFirstUppercaseJson(dog);
+        System.out.println(json);
+        Dog dog2 = toFirstLowercaseJava(json, Dog.class);
+        System.out.println(dog2.toString());
     }
 
 }
