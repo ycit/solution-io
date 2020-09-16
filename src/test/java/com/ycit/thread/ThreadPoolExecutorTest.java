@@ -1,6 +1,9 @@
 package com.ycit.thread;
 
+import com.google.common.util.concurrent.ThreadFactoryBuilder;
 import org.junit.Test;
+
+import java.util.concurrent.*;
 
 /**
  * @author chenxiaolei
@@ -20,6 +23,26 @@ public class ThreadPoolExecutorTest {
         int ctlOf = RUNNING | 0;
         int workCount = ctlOf & CAPACITY;
         System.out.println(RUNNING);
+    }
+
+    public void exceptionTest() {
+    }
+
+    public ThreadPoolExecutor caseVehicleAnalysisThreadPool() {
+        ThreadFactory threadFactory = new ThreadFactoryBuilder()
+                .setNameFormat("case_vehicle_analysis_%s")
+                .setUncaughtExceptionHandler(new ThreadUncaughtExceptionHandler())
+                .build();
+        return new ThreadPoolExecutor(5, 10, 60L, TimeUnit.SECONDS, new LinkedBlockingQueue<>(100),
+                threadFactory, new ThreadPoolExecutor.CallerRunsPolicy());
+    }
+
+    class ThreadUncaughtExceptionHandler implements Thread.UncaughtExceptionHandler {
+
+        @Override
+        public void uncaughtException(Thread t, Throwable e) {
+            System.out.println("t find exception");
+        }
     }
 
 }

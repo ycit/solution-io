@@ -9,7 +9,7 @@ public class Dog {
 
     private String name;
 
-    private String age;
+    private Integer age;
 
     public String getName() {
         return name;
@@ -19,11 +19,17 @@ public class Dog {
         this.name = name;
     }
 
-    public String getAge() {
+    public Integer getAge() {
         return age;
     }
 
-    public void setAge(String age) {
+    public void setAge(Integer age) {
         this.age = age;
+    }
+
+    @Override
+    protected void finalize() throws Throwable {
+        super.finalize();
+        System.out.println("dog finalize run..");
     }
 }

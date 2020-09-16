@@ -10,7 +10,7 @@ import java.util.concurrent.BlockingQueue;
 public class MainTest {
 
     public static void main(String[]args) {
-        BlockingQueue blockingQueue = new ArrayBlockingQueue(10);
+        BlockingQueue<String> blockingQueue = new ArrayBlockingQueue<>(10);
         new Thread(new Producer(blockingQueue)).start();
         new Thread(new Consumer(blockingQueue)).start();
         new Thread(new Consumer(blockingQueue)).start();

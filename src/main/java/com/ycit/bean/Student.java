@@ -86,4 +86,9 @@ public class Student {
         System.out.println(name + " hashcode is " + this.name.hashCode());
         return this.name.hashCode();
     }
+
+    @Override
+    protected void finalize() throws Throwable {
+        System.out.println("student finalize run");
+    }
 }
